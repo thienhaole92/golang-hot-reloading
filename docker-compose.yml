@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  golang-hot-reloading:
+    container_name: golang-hot-reloading
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./
+    volumes:
+      - ./:/app
+    ports:
+      - 8080:8080
+    env_file:
+      - .env
